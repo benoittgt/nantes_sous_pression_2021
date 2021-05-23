@@ -10,6 +10,7 @@
 $water: #3D9CF6;
 $light_water: #ECF5FD;
 $water_dark: #0B83F4;
+$hr_color: rgba(109, 180, 248, 0.2);
 
 #houblon {
   // background: url('./img/houblon.svg')
@@ -48,6 +49,10 @@ $water_dark: #0B83F4;
   color: $water_dark;
 }
 
+* {
+  font-family: 'Work Sans', sans-serif;
+}
+
 .italic {
   font-family: 'Work Sans';
   font-weight: 300;
@@ -61,4 +66,20 @@ $water_dark: #0B83F4;
 .regular {
   font-family: 'Work Sans';
   font-weight: 400;
+}
+
+#seeds {
+  position: absolute;
+  right: 0%;
+  top: 45.2%;
+  bottom: -0.01%;
+}
+
+hr {
+  width: 80%;
+  border-top-color: $hr_color;
+}
+
+.img-responsive {
+  width: 100%;
 }
