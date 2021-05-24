@@ -11,10 +11,6 @@ $light_water: #ECF5FD;
 $water_dark: #0B83F4;
 $hr_color: rgba(109, 180, 248, 0.2);
 
-#houblon {
-  // background: url('./img/houblon.svg')
-}
-
 .navbar-toggler {
   border: none;
   color: $water;
@@ -67,10 +63,25 @@ $hr_color: rgba(109, 180, 248, 0.2);
   font-weight: 400;
 }
 
-.floating-right-img {
-  float: right;
-  margin-right: -16px;
+.absolute-right-img {
+  position: absolute;
+  right: 95px;
 }
+
+.ilu-container {
+  display: flex;
+  justify-content: right;
+  align-items: flex-start;
+  height: 1px;
+}
+
+.ilu {
+  position: sticky;
+  z-index: 1;
+  width: 10rem;
+  margin-right: -15px;
+}
+
 
 hr {
   width: 80%;
@@ -79,4 +90,11 @@ hr {
 
 .img-responsive {
   width: 100%;
+}
+
+.breweries-responsive {
+  max-width: 40px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
 }
