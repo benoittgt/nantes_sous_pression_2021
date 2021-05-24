@@ -69,10 +69,8 @@ $hr_color: rgba(109, 180, 248, 0.2);
 }
 
 #seeds {
-  position: absolute;
-  right: 0%;
-  top: 45.2%;
-  bottom: -0.01%;
+  float: right;
+  margin-right: -16px;
 }
 
 hr {
