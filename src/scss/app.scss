@@ -103,6 +103,12 @@ hr {
   width: auto;
 }
 
+.social-icon {
+  height: 27px;
+  width: auto;
+}
+
+
 
 @include media-breakpoint-up(md) {
   .partners-responsive {
@@ -119,6 +125,11 @@ hr {
 
   .elephant {
     width: 20rem;
+  }
+
+  .social-icon {
+    height: 30px;
+    width: auto;
   }
 }
 
