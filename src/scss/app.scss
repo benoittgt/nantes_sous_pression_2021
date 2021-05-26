@@ -82,7 +82,6 @@ $hr_color: rgba(109, 180, 248, 0.2);
   margin-right: -15px;
 }
 
-
 hr {
   width: 80%;
   border-top-color: $hr_color;
@@ -104,3 +103,28 @@ hr {
   width: auto;
 }
 
+
+@include media-breakpoint-up(md) {
+  .partners-responsive {
+    height: 100px;
+    width: auto;
+  }
+
+  .breweries-responsive {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+  }
+
+  .elephant {
+    width: 20rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .partners-responsive {
+    height: 130px;
+    width: auto;
+  }
+}
