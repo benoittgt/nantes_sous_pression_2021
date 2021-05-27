@@ -116,39 +116,40 @@ module.exports = (env, argv) => {
                         {
                             loader: "file-loader",
                             options: {
-                                name: "img/[name].[ext]"
+                                name: "img/[name].[ext]",
+                                outputPath: 'dist/img/'
                             }
                         },
-                        {
-                            loader: 'image-webpack-loader',
-                            options: {
-                                disable: !isProduction,
-                                mozjpeg: {
-                                    progressive: true,
-                                    quality: 65
-                                },
-                                pngquant: {
-                                    quality: '65-90',
-                                    speed: 4
-                                },
-                                optipng: {enabled: false},
-                                gifsicle: {interlaced: false},
-                                webp: {quality: 75}
-                            }
-                        },
+                      {
+                        loader: 'image-webpack-loader',
+                          options: {
+                            disable: !isProduction,
+                              mozjpeg: {
+                                progressive: true,
+                                  quality: 65
+                              },
+                              pngquant: {
+                                quality: '65-90',
+                                  speed: 4
+                              },
+                              optipng: {enabled: false},
+                              gifsicle: {interlaced: false},
+                              webp: {quality: 75}
+                          }
+                      },
                     ],
                 },
 
-                // fonts loader
-                {
-                    test: /\.(woff|woff2|eot|ttf|otf)$/,
-                    use: [
-                        {
-                            loader: "file-loader",
-                            options: {
-                                name: "fonts/[name].[ext]"
-                            }
-                        },
+              // fonts loader
+              {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [
+                  {
+                    loader: "file-loader",
+                    options: {
+                      name: "fonts/[name].[ext]"
+                    }
+                  },
                     ],
                 },
 
