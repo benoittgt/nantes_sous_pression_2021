@@ -22,153 +22,146 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
  * @returns object
  */
 module.exports = (env, argv) => {
-    let isProduction = (argv.mode === 'production');
+  let isProduction = argv.mode === "production";
 
-    let config = {
-        // absolute path to the base directory
-        context: path.resolve(__dirname, "src"),
+  let config = {
+    // absolute path to the base directory
+    context: path.resolve(__dirname, "src"),
 
-	// development server with hot-reload
-	devServer: {
-            publicPath: '/dist/',
-            watchContentBase: true,
-            compress: true,
-	},
+    // development server with hot-reload
+    devServer: {
+      publicPath: "/dist/",
+      watchContentBase: true,
+      compress: true,
+    },
 
-        // entry files to compile (relative to the base dir)
-        entry: [
-            "./js/app.js",
-            "./scss/app.scss",
-        ],
+    // entry files to compile (relative to the base dir)
+    entry: ["./js/app.js", "./scss/app.scss"],
 
-        // enable development source maps
-        // * will be overwritten by 'source-maps' in production mode
-        devtool: "inline-source-map",
+    // enable development source maps
+    // * will be overwritten by 'source-maps' in production mode
+    devtool: "inline-source-map",
 
-        // path to store compiled JS bundle
-        output: {
-            // bundle relative name
-            filename: "js/app.js",
-            // base build directory
-            path: path.resolve(__dirname, "dist"),
-            // path to build relative asset links
-            publicPath: "../"
+    // path to store compiled JS bundle
+    output: {
+      // bundle relative name
+      filename: "js/app.js",
+      // base build directory
+      path: path.resolve(__dirname, "dist"),
+      // path to build relative asset links
+      publicPath: "../",
+    },
+
+    // plugins configurations
+    plugins: [
+      // save compiled SCSS into separated CSS file
+      new MiniCssExtractPlugin({
+        filename: "css/style.css",
+      }),
+
+      // copy static assets directory
+      new CopyPlugin([{ from: "static", to: "static" }]),
+
+    //   new CopyPlugin([{ from: "img", to: "img" }]),
+
+      // image optimization
+      new ImageminPlugin({
+        // disable for dev builds
+        disable: !isProduction,
+        test: /\.(jpe?g|png|gif)$/i,
+        pngquant: { quality: "70-85" },
+        optipng: { optimizationLevel: 9 },
+      }),
+
+      // provide jQuery and Popper.js dependencies
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        jquery: "jquery",
+        "window.jQuery": "jquery",
+        Popper: ["popper.js", "default"],
+      }),
+    ],
+
+    // production mode optimization
+    optimization: {
+      minimizer: [
+        // CSS optimizer
+        new OptimizeCSSAssetsPlugin(),
+        // JS optimizer by default
+        new TerserPlugin(),
+      ],
+    },
+
+    // custom loaders configuration
+    module: {
+      rules: [
+        // styles loader
+        {
+          test: /\.(sa|sc|c)ss$/,
+          use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
         },
 
-        // plugins configurations
-        plugins: [
-            // save compiled SCSS into separated CSS file
-            new MiniCssExtractPlugin({
-                filename: "css/style.css"
-            }),
-
-            // copy static assets directory
-            new CopyPlugin([
-                {from: 'static', to: 'static'}
-            ]),
-
-            // image optimization
-            new ImageminPlugin({
-                // disable for dev builds
+        // images loader
+        {
+          test: /\.(png|jpe?g|svg|gif)$/,
+          loaders: [
+            {
+              loader: "file-loader",
+              options: {
+                name: "img/[name].[ext]",
+              },
+            },
+            {
+              loader: "image-webpack-loader",
+              options: {
                 disable: !isProduction,
-                test: /\.(jpe?g|png|gif)$/i,
-                pngquant: {quality: '70-85'},
-                optipng: {optimizationLevel: 9}
-            }),
-
-            // provide jQuery and Popper.js dependencies
-            new webpack.ProvidePlugin({
-                $: 'jquery',
-                jQuery: 'jquery',
-                jquery: 'jquery',
-                'window.jQuery': 'jquery',
-                Popper: ['popper.js', 'default']
-            }),
-        ],
-
-        // production mode optimization
-        optimization: {
-            minimizer: [
-                // CSS optimizer
-                new OptimizeCSSAssetsPlugin(),
-                // JS optimizer by default
-                new TerserPlugin(),
-            ],
+                mozjpeg: {
+                  progressive: true,
+                  quality: 65,
+                },
+                pngquant: {
+                  quality: "65-90",
+                  speed: 4,
+                },
+                optipng: { enabled: false },
+                gifsicle: { interlaced: false },
+                webp: { quality: 75 },
+              },
+            },
+          ],
         },
 
-        // custom loaders configuration
-        module: {
-            rules: [
-                // styles loader
-                {
-                    test: /\.(sa|sc|c)ss$/,
-                    use: [
-                        MiniCssExtractPlugin.loader,
-                        "css-loader",
-                        "sass-loader"
-                    ],
-                },
-
-                // images loader
-                {
-                    test: /\.(png|jpe?g|svg|gif)$/,
-                    loaders: [
-                        {
-                            loader: "file-loader",
-                            options: {
-                                name: "img/[name].[ext]",
-                                outputPath: 'dist/img/'
-                            }
-                        },
-                      {
-                        loader: 'image-webpack-loader',
-                          options: {
-                            disable: !isProduction,
-                              mozjpeg: {
-                                progressive: true,
-                                  quality: 65
-                              },
-                              pngquant: {
-                                quality: '65-90',
-                                  speed: 4
-                              },
-                              optipng: {enabled: false},
-                              gifsicle: {interlaced: false},
-                              webp: {quality: 75}
-                          }
-                      },
-                    ],
-                },
-
-              // fonts loader
-              {
-                test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: [
-                  {
-                    loader: "file-loader",
-                    options: {
-                      name: "fonts/[name].[ext]"
-                    }
-                  },
-                    ],
-                },
-
-                // svg inline 'data:image' loader
-                {
-                    test: /\.svg$/,
-                    loader: "svg-url-loader"
-                },
-            ]
+        // fonts loader
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                name: "fonts/[name].[ext]",
+              },
+            },
+          ],
         },
-    };
 
-    // PRODUCTION ONLY configuration
-    if (isProduction) {
-        config.plugins.push(
-            // clean 'dist' directory
-            new CleanWebpackPlugin()
-        );
-    }
+        // svg inline 'data:image' loader
+        {
+          test: /\.svg$/,
+          loader: "svg-url-loader",
+        },
+      ],
+    },
+  };
 
-    return config;
+  // PRODUCTION ONLY configuration
+  if (isProduction) {
+    config.plugins
+      .push
+      // clean 'dist' directory
+      // new CleanWebpackPlugin()
+      ();
+  }
+
+  return config;
 };
