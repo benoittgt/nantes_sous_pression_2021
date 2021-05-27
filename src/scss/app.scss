@@ -3,12 +3,12 @@
 
 // Import main Bootstrap styles
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;1,300&display=swap");
 
 // Color from Figma
-$water: #3D9CF6;
-$light_water: #ECF5FD;
-$water_dark: #0B83F4;
+$water: #3d9cf6;
+$light_water: #ecf5fd;
+$water_dark: #0b83f4;
 $hr_color: rgba(109, 180, 248, 0.2);
 
 .navbar-toggler {
@@ -45,21 +45,21 @@ $hr_color: rgba(109, 180, 248, 0.2);
 }
 
 * {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
 .italic {
-  font-family: 'Work Sans';
+  font-family: "Work Sans";
   font-weight: 300;
 }
 
 .semi-bold {
-  font-family: 'Work Sans';
+  font-family: "Work Sans";
   font-weight: 600;
 }
 
 .regular {
-  font-family: 'Work Sans';
+  font-family: "Work Sans";
   font-weight: 400;
 }
 
@@ -69,17 +69,14 @@ $hr_color: rgba(109, 180, 248, 0.2);
 }
 
 .ilu-container {
-  display: flex;
-  justify-content: right;
-  align-items: flex-start;
-  height: 1px;
+  position: relative;
 }
 
 .ilu {
-  position: sticky;
-  z-index: 1;
+  position: absolute;
   width: 10rem;
-  margin-right: -15px;
+  right: 0px;
+  z-index: 2;
 }
 
 hr {
@@ -107,7 +104,6 @@ hr {
   height: 27px;
   width: auto;
 }
-
 
 @include media-breakpoint-up(md) {
   .partners-responsive {
