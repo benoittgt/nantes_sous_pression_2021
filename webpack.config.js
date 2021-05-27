@@ -5,14 +5,14 @@
  */
 
 // import plugins
-const path = require('path');
-const webpack = require('webpack');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const path = require("path");
+const webpack = require("webpack");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+const ImageminPlugin = require("imagemin-webpack-plugin").default;
 
 /**
  * Base webpack configuration
@@ -62,12 +62,12 @@ module.exports = (env, argv) => {
       // copy static assets directory
       new CopyPlugin([{ from: "static", to: "static" }]),
 
-    //   new CopyPlugin([{ from: "img", to: "img" }]),
+      new CopyPlugin([{ from: "img", to: "img" }]),
 
       // image optimization
       new ImageminPlugin({
         // disable for dev builds
-        disable: !isProduction,
+        // disable: !isProduction,
         test: /\.(jpe?g|png|gif)$/i,
         pngquant: { quality: "70-85" },
         optipng: { optimizationLevel: 9 },
