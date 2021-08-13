@@ -105,6 +105,13 @@ hr {
   width: auto;
 }
 
+.list-group-item {
+  background-color: transparent;
+  border-top: 1px solid #ddd;
+  border-radius: 0;
+  color: $water_dark;
+}
+
 @include media-breakpoint-up(md) {
   .partners-responsive {
     height: 80px;
