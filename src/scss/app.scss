@@ -9,6 +9,7 @@
 $water: #3d9cf6;
 $light_water: #ecf5fd;
 $water_dark: #0b83f4;
+$stew_light: #FFD43D;
 $hr_color: rgba(109, 180, 248, 0.2);
 
 .navbar-toggler {
@@ -18,6 +19,14 @@ $hr_color: rgba(109, 180, 248, 0.2);
 
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(61, 156, 246, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.btn-primary {
+  @include button-variant($stew_light, darken($stew_light, 7.5%), darken($stew_light, 10%), lighten($stew_light,5%), lighten($stew_light, 10%), darken($stew_light,30%));
+}
+
+.btn-outline-primary {
+  @include button-outline-variant($stew_light, #222222, lighten($stew_light,5%), $stew_light);
 }
 
 #typogramme {
