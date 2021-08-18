@@ -5,12 +5,11 @@ function beerEventTemplate(event) {
   return `
   <a href="${event.facebook_event}" target="_blank" rel="noopener noreferrer" class="list-group-item list-group-item-action flex-column align-items-start day-event" id=${event.day.replace(/\s/g, '-')}>
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">${event.name}</h5>
-      <small>${event.day}</small>
+      <h5 class="mb-1 grey">${event.place} - ${event.name}</h5>
+      <small class="grey">${event.day}</small>
     </div>
-    <p class="mb-1">${event.description}</p>
-    <p class="mb-1">Lieu: ${event.place}</p>
-    <small><b>Prix:</b> ${event.price}. <b>Horaires:</b> ${event.times}. <b>Réservation:</b> ${event.reservation}</small>
+    <p class="mb-1 grey">${event.description}</p>
+    <small class="grey"><b>Prix:</b> ${event.price}. <b>Horaires:</b> ${event.times}. <b>Réservation:</b> ${event.reservation}</small>
   </a>
 `
 }

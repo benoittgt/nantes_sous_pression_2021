@@ -33,6 +33,10 @@ $hr_color: rgba(109, 180, 248, 0.2);
   min-width: 80%;
 }
 
+.grey {
+  color: #4a4848;
+}
+
 @include media-breakpoint-up(sm) {
   #typogramme {
     width: 80%;
