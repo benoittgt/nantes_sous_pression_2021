@@ -10,6 +10,7 @@ $water: #3d9cf6;
 $light_water: #ecf5fd;
 $water_dark: #0b83f4;
 $stew_light: #FFD43D;
+$stew_dark: #EBB600;
 $hr_color: rgba(109, 180, 248, 0.2);
 $grey: #2D3E4D;
 
@@ -36,6 +37,10 @@ $grey: #2D3E4D;
 
 .grey {
   color: #4a4848;
+}
+
+.stew-dark {
+  color: $stew_dark;
 }
 
 @include media-breakpoint-up(sm) {
