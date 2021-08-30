@@ -9,6 +9,9 @@ function beerEventTemplate(event) {
       <small class="grey">${event.day}</small>
     </div>
     <p class="mb-1 grey">${event.description}</p>
+    <p class="m-0">
+      <img src="dist/img/${event.event_image_link}.png" class="m-2 partners-responsive" alt="${event.place}">
+    </p>
     <small class="grey"><b>Prix:</b> ${event.price}. <b>Horaires:</b> ${event.times}. <b>Réservation:</b> ${event.reservation}</small>
   </a>
 `
