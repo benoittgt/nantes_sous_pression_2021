@@ -115,7 +115,9 @@ hr {
 }
 
 .partners-responsive {
-  height: 60px;
+  max-height: 100px;
+  max-width: 240px;
+  height: auto;
   width: auto;
 }
 
@@ -133,7 +135,7 @@ hr {
 
 @include media-breakpoint-up(md) {
   .partners-responsive {
-    height: 80px;
+    height: 100px;
     width: auto;
   }
 
@@ -156,8 +158,8 @@ hr {
 
 @include media-breakpoint-up(lg) {
   .partners-responsive {
-    max-height: 90px;
-    max-width: 220px;
+    max-height: 120px;
+    max-width: 240px;
     height: auto;
     width: auto;
   }
