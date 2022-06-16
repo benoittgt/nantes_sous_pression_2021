@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Basic page info -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<head>
+  <!-- Basic page info -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Website icon -->
     <link rel="icon" type="image/png" href="dist/img/houblon.svg">
@@ -42,9 +43,32 @@
             <img id="houblon" src="dist/img/houblon.svg" width="30" height="30" alt="">
           </a>
 
-          <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" hidden>
+          <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+
+          <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#evenements" hidden>Événements</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#billetterie" hidden>Billetterie</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#brasseries">Brasseries</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#infos-pratiques" hidden>Infos pratiques</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#faq">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#partenaires" hidden>Partenaires</a>
+              </li>
+            </ul>
+          </div>
         </nav>
 
         <div class="main-content-nsp rounded mt-4">
@@ -86,6 +110,101 @@
               <h5 class="m-4">
                 À l’initiative de cette édition; l'association <b>Nantes Beer Club</b> qui regroupe une centaine de membres.
               </h5>
+            </div>
+          </div>
+
+          <hr/>
+
+          <div class=ilu-container>
+            <img class="ilu elephant" src="dist/img/elephant.svg" alt="Elephant">
+          </div>
+
+          <h4 id="brasseries" class="mx-4 water-dark pt-4 pb-2 semi-bold">Les brasseries</h4>
+
+          <div class="row">
+            <div class="col-12 col-sm-12 col-lg-9">
+              <ul class="list-group list-group-flush bg-transparent">
+
+                <li class="list-group-item d-flex align-items-start bg-transparent">
+                  <div class="image-parent">
+                    <img src="dist/img/b_aerofab_2.png" class="breweries-responsive mr-3" alt="Aerofab">
+                  </div>
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Aerofab 🇫🇷</div>
+                    <a href="http://aerofab.fr/">aerofab.fr</a>
+                  </div>
+                </li>
+
+                <li class="list-group-item d-flex align-items-start bg-transparent">
+                  <div class="image-parent">
+                    <img src="dist/img/b_l_apaisee.png" class="breweries-responsive mr-3" alt="Brasserie l’Apaisée">
+                  </div>
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Brasserie l’Apaisée 🇨🇭</div>
+                    <a href="https://lapaisee.ch/">lapaisee.ch</a>
+                  </div>
+                </li>
+
+                <li class="list-group-item d-flex align-items-start bg-transparent">
+                  <div class="image-parent">
+                    <img src="dist/img/b_bubar_2.png" class="breweries-responsive mr-3" alt="Bubar">
+                  </div>
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Bubar 🇫🇷</div>
+                    <a href="https://bubarnantes.fr/">bubarnantes.fr</a>
+                  </div>
+                </li>
+
+                <li class="list-group-item d-flex align-items-start bg-transparent">
+                  <div class="image-parent">
+                    <img src="dist/img/b_hoppy_road.png" class="breweries-responsive mr-3" alt="Hoppy Road">
+                  </div>
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Hoppy Road 🇫🇷</div>
+                    <a href="https://hoppyroad.com/">hoppyroad.com</a>
+                  </div>
+                </li>
+
+                <li class="list-group-item d-flex align-items-start bg-transparent">
+                  <div class="image-parent">
+                    <img src="dist/img/b_iron.png" class="breweries-responsive mr-3" alt="Iron Brewery">
+                  </div>
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Iron Brewery 🇫🇷</div>
+                    <a href="https://www.facebook.com/brasserie.iron/">facebook.com/brasserie.iron</a>
+                  </div>
+                </li>
+
+                <li class="list-group-item d-flex align-items-start bg-transparent">
+                  <div class="image-parent">
+                    <img src="dist/img/b_montagnarde.png" class="breweries-responsive mr-3" alt="Brasserie La Montagnarde">
+                  </div>
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Brasserie La Montagnarde 🇫🇷</div>
+                    <a href="https://la-montagnarde.fr/">la-montagnarde.fr</a>
+                  </div>
+                </li>
+
+                <li class="list-group-item d-flex align-items-start bg-transparent">
+                  <div class="image-parent">
+                    <img src="dist/img/b_nautile.png" class="breweries-responsive mr-3 rounded" alt="Nautile">
+                  </div>
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Brasserie Nautile 🇫🇷</div>
+                    <a href="https://www.facebook.com/brasserienautile/">facebook.com/brasserienautile</a>
+                  </div>
+                </li>
+
+                <li class="list-group-item d-flex align-items-start bg-transparent">
+                  <div class="image-parent">
+                    <img src="dist/img/b_grand_zig.png" class="breweries-responsive mr-3 rounded" alt="Grand Zig">
+                  </div>
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Grand Zig 🇫🇷</div>
+                    <a href="https://www.facebook.com/biereszig/">facebook.com/Grand Zig</a>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
 
