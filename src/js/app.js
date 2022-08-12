@@ -45,9 +45,9 @@ function addBeerEvent(events) {
         <button type="button" id="thursday-event" class="btn btn-primary">Jeudi</button>
         <button type="button" id="friday-event" class="btn btn-primary">Vendredi</button>
       </div>
-      <div class="btn-group mt-2" role="group" aria-label="day-weekend-selection">
-        <button type="button" id="saturday-event" class="btn btn-primary">❤️ Samedi</button>
-        <button type="button" id="sunday-event" class="btn btn-primary">Dimanche ❤️</button>
+      <div hidden class="btn-group mt-2" role="group" aria-label="day-weekend-selection">
+        <button disable type="button" id="saturday-event" class="btn btn-primary">❤️ Samedi</button>
+        <button disable type="button" id="sunday-event" class="btn btn-primary">Dimanche ❤️</button>
       </div>
     </div>
     <div class="list-group list-group-flush">
@@ -74,7 +74,7 @@ function addBeerEvent(events) {
 }
 
 function init() {
-  Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vTPHQ0uV24jynuVRLPPA22JxEgx658oqKFKWwZ_5LP7XFzlr7NZUFMx7qS1vNZrgUOT4DMEP9EfvE4b/pub?gid=0&single=true&output=csv', {
+  Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vQRnPiq6Ln0sRNBe0dEY_Jst47jZKFGzcKBtl0kX37A2xQ0liNyHc_gP-EVesFsGbx1jnt-sIC5ZYbr/pub?gid=0&single=true&output=csv', {
     download: true,
     header: true,
     complete: function(results) {
