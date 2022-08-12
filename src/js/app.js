@@ -63,13 +63,13 @@ function addBeerEvent(events) {
   const saturdayEvent = document.getElementById('saturday-event');
   const sundayEvent = document.getElementById('sunday-event');
 
-  mondayEvent.addEventListener('click', function () { showOnlyEvents('Lundi-20')});
-  tuesdayEvent.addEventListener('click', function () { showOnlyEvents('Mardi-21')});
-  wednesdayEvent.addEventListener('click', function () { showOnlyEvents('Mercredi-22')});
-  thursdayEvent.addEventListener('click', function () { showOnlyEvents('Jeudi-23')});
-  fridayEvent.addEventListener('click', function () { showOnlyEvents('Vendredi-24')});
-  saturdayEvent.addEventListener('click', function () { showOnlyEvents('Samedi-25')});
-  sundayEvent.addEventListener('click', function () { showOnlyEvents('Dimanche-26')});
+  mondayEvent.addEventListener('click', function () { showOnlyEvents('Lundi-12')});
+  tuesdayEvent.addEventListener('click', function () { showOnlyEvents('Mardi-13')});
+  wednesdayEvent.addEventListener('click', function () { showOnlyEvents('Mercredi-14')});
+  thursdayEvent.addEventListener('click', function () { showOnlyEvents('Jeudi-15')});
+  fridayEvent.addEventListener('click', function () { showOnlyEvents('Vendredi-16')});
+  saturdayEvent.addEventListener('click', function () { showOnlyEvents('Samedi-17')});
+  sundayEvent.addEventListener('click', function () { showOnlyEvents('Dimanche-18')});
 
 }
 
