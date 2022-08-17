@@ -45,9 +45,9 @@ function addBeerEvent(events) {
         <button type="button" id="thursday-event" class="btn btn-primary">Jeudi</button>
         <button type="button" id="friday-event" class="btn btn-primary">Vendredi</button>
       </div>
-      <div hidden class="btn-group mt-2" role="group" aria-label="day-weekend-selection">
-        <button disable type="button" id="saturday-event" class="btn btn-primary">❤️ Samedi</button>
-        <button disable type="button" id="sunday-event" class="btn btn-primary">Dimanche ❤️</button>
+      <div class="btn-group mt-2" role="group" aria-label="day-weekend-selection">
+        <button type="button" id="saturday-event" class="btn btn-primary">❤️ Samedi</button>
+        <button type="button" id="sunday-event" class="btn btn-primary">Dimanche ❤️</button>
       </div>
     </div>
     <div class="list-group list-group-flush">
