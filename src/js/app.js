@@ -6,7 +6,7 @@ function beerEventTemplate(event) {
   <a href="${event.facebook_event}" target="_blank" rel="noopener noreferrer" class="list-group-item list-group-item-action flex-column align-items-start day-event" id=${event.day.replace(/\s/g, '-')}>
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1 grey">${event.place} - ${event.name}</h5>
-      <small class="grey">${event.day}</small>
+      <small class="grey">${event.day.replace(/\s/g, "&nbsp;")}</small>
     </div>
     <p class="mb-1 grey">${event.description}</p>
     <p class="m-0">
