@@ -10,7 +10,9 @@ function beerEventTemplate(event) {
     </div>
     <p class="mb-1 grey">${event.description}</p>
     <p class="m-0">
-      <img src="dist/img/${event.event_image_link}.png" class="m-2 partners-responsive" alt="${event.place}">
+      <img src="dist/img/${event.event_image_link}.png" class="m-1 event-participants-responsive" alt="${event.place}">
+      ${ event.image_link_2 !== "" ? `<img src="dist/img/${event.image_link_2}.png" class="m-1 event-participants-responsive">` : '' }
+      ${ event.image_link_3 !== "" ? `<img src="dist/img/${event.image_link_3}.png" class="m-1 event-participants-responsive">` : '' }
     </p>
     <small class="grey">
       ${ event.price !== "" ? `<b>Prix:</b> ${event.price}.` : '' }
