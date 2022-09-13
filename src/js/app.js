@@ -45,7 +45,7 @@ function addBeerEvent(events) {
   let eventsTemplate = `
     <div class="col text-center mb-3">
       <div class="btn-group flex-wrap mt-2 mr-2" role="group" aria-label="day-event-selection">
-        <button type="button" id="monday-event" class="btn btn-primary">Lundi</button>
+        <button type="button" id="monday-event" disabled class="btn btn-primary">Lundi</button>
         <button type="button" id="tuesday-event" class="btn btn-primary">Mardi</button>
         <button type="button" id="wednesday-event" class="btn btn-primary">Mercredi</button>
         <button type="button" id="thursday-event" class="btn btn-primary">Jeudi</button>
