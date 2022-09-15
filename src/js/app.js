@@ -47,7 +47,7 @@ function addBeerEvent(events) {
       <div class="btn-group flex-wrap mt-2 mr-2" role="group" aria-label="day-event-selection">
         <button type="button" id="monday-event" disabled class="btn btn-primary">Lundi</button>
         <button type="button" id="tuesday-event" disabled class="btn btn-primary">Mardi</button>
-        <button type="button" id="wednesday-event" class="btn btn-primary">Mercredi</button>
+        <button type="button" id="wednesday-event" disabled class="btn btn-primary">Mercredi</button>
         <button type="button" id="thursday-event" class="btn btn-primary">Jeudi</button>
         <button type="button" id="friday-event" class="btn btn-primary">Vendredi</button>
       </div>
