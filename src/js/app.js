@@ -31,7 +31,7 @@ function showOnlyEvents(day) {
 function addBeerEvent(events) {
   let listGroupEvents = [];
   events.forEach(function(row) {
-    if (row.active == 'FALSE') { return; }
+    if (row.active != 'TRUE') { return; }
 
     listGroupEvents.push(beerEventTemplate(row))
   })
