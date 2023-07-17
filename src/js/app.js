@@ -31,7 +31,7 @@ function showOnlyEvents(day) {
 function addBeerEvent(events) {
   let listGroupEvents = [];
   events.forEach(function(row) {
-    if (row.active == 'FALSE') { return; }
+    if (row.active != 'TRUE') { return; }
 
     listGroupEvents.push(beerEventTemplate(row))
   })
@@ -63,18 +63,18 @@ function addBeerEvent(events) {
   const saturdayEvent = document.getElementById('saturday-event');
   const sundayEvent = document.getElementById('sunday-event');
 
-  mondayEvent.addEventListener('click', function () { showOnlyEvents('Lundi-20')});
-  tuesdayEvent.addEventListener('click', function () { showOnlyEvents('Mardi-21')});
-  wednesdayEvent.addEventListener('click', function () { showOnlyEvents('Mercredi-22')});
-  thursdayEvent.addEventListener('click', function () { showOnlyEvents('Jeudi-23')});
-  fridayEvent.addEventListener('click', function () { showOnlyEvents('Vendredi-24')});
-  saturdayEvent.addEventListener('click', function () { showOnlyEvents('Samedi-25')});
-  sundayEvent.addEventListener('click', function () { showOnlyEvents('Dimanche-26')});
+  mondayEvent.addEventListener('click', function () { showOnlyEvents('Lundi-11')});
+  tuesdayEvent.addEventListener('click', function () { showOnlyEvents('Mardi-12')});
+  wednesdayEvent.addEventListener('click', function () { showOnlyEvents('Mercredi-13')});
+  thursdayEvent.addEventListener('click', function () { showOnlyEvents('Jeudi-14')});
+  fridayEvent.addEventListener('click', function () { showOnlyEvents('Vendredi-15')});
+  saturdayEvent.addEventListener('click', function () { showOnlyEvents('Samedi-16')});
+  sundayEvent.addEventListener('click', function () { showOnlyEvents('Dimanche-17')});
 
 }
 
 function init() {
-  Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vTPHQ0uV24jynuVRLPPA22JxEgx658oqKFKWwZ_5LP7XFzlr7NZUFMx7qS1vNZrgUOT4DMEP9EfvE4b/pub?gid=0&single=true&output=csv', {
+  Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vSRc00CG2JSglmA66KHJk6HQu0u24nl6Ip2EWR4MUTMyuNI2K4_7EvWU5750jUcxH_mlX2QcW9glWhs/pub?gid=0&single=true&output=csv', {
     download: true,
     header: true,
     complete: function(results) {
