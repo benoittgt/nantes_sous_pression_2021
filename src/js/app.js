@@ -1,3 +1,4 @@
+import 'bootstrap';
 import * as Papa from 'papaparse'
 
 function beerEventTemplate(event) {
