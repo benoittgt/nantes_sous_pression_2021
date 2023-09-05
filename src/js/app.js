@@ -2,6 +2,10 @@ import 'bootstrap';
 import * as Papa from 'papaparse'
 
 function beerEventTemplate(event) {
+  let image_node = '';
+  if (event.event_image_link) {
+    image_node = `<img src="dist/img/${event.event_image_link}.png" class="m-2 partners-responsive" alt="${event.place}"></img>`;
+  }
   return `
   <a href="${event.facebook_event}" target="_blank" rel="noopener noreferrer" class="list-group-item list-group-item-action flex-column align-items-start day-event" id=${event.day.replace(/\s/g, '-')}>
     <div class="d-flex w-100 justify-content-between">
@@ -10,7 +14,7 @@ function beerEventTemplate(event) {
     </div>
     <p class="mb-1 grey">${event.description}</p>
     <p class="m-0">
-      <img src="dist/img/${event.event_image_link}.png" class="m-2 partners-responsive" alt="${event.place}">
+      ${image_node}
     </p>
     <small class="grey"><b>Prix:</b> ${event.price}. <b>Horaires:</b> ${event.times}. <b>Réservation:</b> ${event.reservation}</small>
   </a>
