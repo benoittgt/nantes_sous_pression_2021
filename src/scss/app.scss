@@ -3,7 +3,7 @@
 
 // Import main Bootstrap styles
 @import "~bootstrap/scss/bootstrap";
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
 
 // Color from Figma
 $water: #3d9cf6;
@@ -64,21 +64,21 @@ $grey: #2D3E4D;
 }
 
 * {
-  font-family: "Work Sans", sans-serif;
+  font-family: "Poetsen One", sans-serif;
 }
 
 .italic {
-  font-family: "Work Sans";
+  font-family: "Poetsen One";
   font-weight: 300;
 }
 
 .semi-bold {
-  font-family: "Work Sans";
+  font-family: "Poetsen One";
   font-weight: 600;
 }
 
 .regular {
-  font-family: "Work Sans";
+  font-family: "Poetsen One";
   font-weight: 400;
 }
 
