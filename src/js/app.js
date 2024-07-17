@@ -43,8 +43,8 @@ function addBeerEvent(events) {
   let eventsTemplate = `
     <div class="col text-center mb-3">
       <div class="btn-group flex-wrap mt-2 mr-2" role="group" aria-label="day-event-selection">
-        <button type="button" id="monday-event" disabled class="btn btn-primary">Lundi</button>
-        <button type="button" id="tuesday-event" disabled class="btn btn-primary">Mardi</button>
+        <button type="button" id="monday-event" class="btn btn-primary">Lundi</button>
+        <button type="button" id="tuesday-event" class="btn btn-primary">Mardi</button>
         <button type="button" id="wednesday-event" class="btn btn-primary">Mercredi</button>
         <button type="button" id="thursday-event" class="btn btn-primary">Jeudi</button>
         <button type="button" id="friday-event" class="btn btn-primary">Vendredi</button>
@@ -67,18 +67,18 @@ function addBeerEvent(events) {
   const saturdayEvent = document.getElementById('saturday-event');
   const sundayEvent = document.getElementById('sunday-event');
 
-  mondayEvent.addEventListener('click', function () { showOnlyEvents('Lundi-11')});
-  tuesdayEvent.addEventListener('click', function () { showOnlyEvents('Mardi-12')});
-  wednesdayEvent.addEventListener('click', function () { showOnlyEvents('Mercredi-13')});
-  thursdayEvent.addEventListener('click', function () { showOnlyEvents('Jeudi-14')});
-  fridayEvent.addEventListener('click', function () { showOnlyEvents('Vendredi-15')});
-  saturdayEvent.addEventListener('click', function () { showOnlyEvents('Samedi-16')});
-  sundayEvent.addEventListener('click', function () { showOnlyEvents('Dimanche-17')});
+  mondayEvent.addEventListener('click', function () { showOnlyEvents('Lundi-09')});
+  tuesdayEvent.addEventListener('click', function () { showOnlyEvents('Mardi-10')});
+  wednesdayEvent.addEventListener('click', function () { showOnlyEvents('Mercredi-11')});
+  thursdayEvent.addEventListener('click', function () { showOnlyEvents('Jeudi-12')});
+  fridayEvent.addEventListener('click', function () { showOnlyEvents('Vendredi-13')});
+  saturdayEvent.addEventListener('click', function () { showOnlyEvents('Samedi-14')});
+  sundayEvent.addEventListener('click', function () { showOnlyEvents('Dimanche-15')});
 
 }
 
 function init() {
-  Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vSRc00CG2JSglmA66KHJk6HQu0u24nl6Ip2EWR4MUTMyuNI2K4_7EvWU5750jUcxH_mlX2QcW9glWhs/pub?gid=0&single=true&output=csv', {
+  Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vTMXZMQtFZbRa66700v7W1wf67rRFRiNSXZk9Drcr5qr_7SipEDUzJ0XNLVo363XIjiDXnsdaCM_RnD/pub?gid=0&single=true&output=csv', {
     download: true,
     header: true,
     complete: function(results) {
