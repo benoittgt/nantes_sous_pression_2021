@@ -87,4 +87,30 @@ function init() {
   })
 }
 
+
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('.navbar-nav > li > a');
+
+  const menuToggle = document.getElementById('navbarToggler');
+
+  const bsVersion = (typeof bootstrap !== 'undefined') ? parseInt(bootstrap.Collapse.VERSION.split('.')[0]) : 0;
+
+  function closeMenu() {
+      if (bsVersion >= 5) {
+          const bsCollapse = bootstrap.Collapse.getInstance(menuToggle);
+          if (bsCollapse && menuToggle.classList.contains('show')) {
+              bsCollapse.hide();
+          }
+      } else {
+          // Fallback for older Bootstrap versions or custom implementations
+          menuToggle.classList.remove('show');
+      }
+  }
+
+  // Add click event listener to each link
+  navLinks.forEach(function(link) {
+      link.addEventListener('click', closeMenu);
+  });
+});
+
 window.addEventListener('DOMContentLoaded', init)
