@@ -14,6 +14,16 @@ $stew_dark: #EBB600;
 $hr_color: rgba(109, 180, 248, 0.2);
 $grey: #2D3E4D;
 
+/* Prevent navbar from hiding link when clicking on anchor link */
+html {
+  scroll-padding-top: 30px;
+}
+
+/* For older browsers that don't support scroll-padding */
+:target {
+  scroll-margin-top: 30px;
+}
+
 .navbar-toggler {
   border: none;
   color: $water_dark;
