@@ -2,10 +2,15 @@ import 'bootstrap';
 import * as Papa from 'papaparse'
 
 function beerEventTemplate(event) {
-  let image_node = '';
-  if (event.event_image_link) {
-    image_node = `<img src="dist/img/${event.event_image_link}.png" class="m-2 partners-responsive" alt="${event.place}"></img>`;
-  }
+  let image_nodes = '';
+  const imageLinks = [event.event_image_link, event.image_link_2, event.image_link_3];
+  
+  imageLinks.forEach(link => {
+    if (link) {
+      image_nodes += `<img src="dist/img/${link}.png" class="partner-logo" alt="${event.place}">`;
+    }
+  });
+
   return `
   <a href="${event.facebook_event}" target="_blank" rel="noopener noreferrer" class="list-group-item list-group-item-action flex-column align-items-start day-event" id=${event.day.replace(/\s/g, '-')}>
     <div class="d-flex w-100 justify-content-between">
@@ -13,13 +18,15 @@ function beerEventTemplate(event) {
       <small class="grey">${event.day}</small>
     </div>
     <p class="mb-1 grey">${event.description}</p>
-    <p class="m-0">
-      ${image_node}
-    </p>
+    <div class="logo-container">
+      ${image_nodes}
+    </div>
     <small class="grey"><b>Prix:</b> ${event.price}. <b>Horaires:</b> ${event.times}. <b>Réservation:</b> ${event.reservation}</small>
   </a>
-`
+  `;
 }
+
+
 
 function showOnlyEvents(day) {
   let listGroupItems = document.getElementsByClassName('day-event');
