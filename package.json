@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "description": "Nantes Sous Pression 2021",
   "scripts": {
-    "build": "webpack --mode=development --progress --hide-modules",
-    "production": "webpack --mode=production --progress --hide-modules --devtool=source-maps",
-    "watch": "webpack --mode=development --watch --open",
-    "start": "webpack-dev-server --open --mode=development"
+    "build": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode=development --progress --hide-modules",
+    "production": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode=production --progress --hide-modules --devtool=source-maps",
+    "watch": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode=development --watch --open",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server --open --mode=development"
   },
   "repository": {},
   "keywords": [],
@@ -38,6 +38,6 @@
     "popper.js": "^1.16.1"
   },
   "volta": {
-    "node": "16.20.2"
+    "node": "18.20.6"
   }
 }
