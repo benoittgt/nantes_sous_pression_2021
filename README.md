@@ -4,7 +4,7 @@ https://www.nantes-sous-pression.com/
 
 ## Requirements
 
-- Node 18 
+- Node 16
 - Python
 - Run `CXXFLAGS="--std=c++17" yarn install`
 
